@@ -18,4 +18,4 @@ wc: wc.c
 clean:
 	rm bin/*
 
-.PHONY: clean
+.PHONY: all clean
