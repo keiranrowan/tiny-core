@@ -1,19 +1,17 @@
 CC=gcc
-CFLAGS=-I.
+CFLAGS=-I./inc
+SRC=./src
+BIN=./bin
+MODULES= cat false hostname true wc
 
-all: cat false true wc
+all: $(MODULES)
 
-cat: cat.c
-	gcc cat.c -o bin/cat
+$(MODULES):
+	$(CC) $(SRC)/$@.c -o $(BIN)/$@ $(CFLAGS)
 
-false: false.c
-	gcc false.c -o bin/false
+debug: CFLAGS += -g
 
-true: true.c
-	gcc true.c -o bin/true
-
-wc: wc.c
-	gcc wc.c -o bin/wc
+debug: all
 
 clean:
 	rm bin/*
