@@ -9,8 +9,11 @@ int main(int argc, char **argv) {
 	if (argc > 1) {
 #ifdef _WIN32
 		Sleep(atoi(argv[1]));
+		return 0;
 #else
 		sleep(atoi(argv[1]));
+		return 0;
 #endif
 	}
+	return 1;
 }
