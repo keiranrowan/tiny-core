@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-I./inc
 SRC=./src
 BIN=./bin
-MODULES= cat false hostname sleep true wc yes
+MODULES= cat echo false hostname sleep true wc yes
 
 all: $(MODULES)
 
